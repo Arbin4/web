@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      div {
+        padding: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="canvas.html"
+      target="_blank"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
+        </div>
+        <div>
+          <label for="textarea">TextArea</label>
+          <textarea
+            id="textarea"
+            name="textarea"
+            style="resize: vertical"
+          ></textarea>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Optional Information</legend>
+        <label for="mothersname">Mother's Name</label>
+        <input type="text" id="mothersname" />
+        <br /><br />
+        <label for="fathersname">Father's Name</label>
+        <input type="text" id="fathersname" />
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

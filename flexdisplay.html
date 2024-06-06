@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      .parent {
+        display: flex;
+        height: 50vh;
+        background: yellow;
+        flex-direction: row;
+        /* column-gap: 20px; */
+        gap: 20px;
+        /* justify-content: center; */
+        flex-wrap: wrap;
+        /* align-items: flex-end; */
+      }
+
+      .child {
+        /* width: 100px; */
+        height: 100px;
+        background: black;
+        flex-shrink: 0;
+        flex: 0 0 500px;
+      }
+      .child:nth-child(2) {
+        align-self: flex-end;
+        flex: 0 0 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
