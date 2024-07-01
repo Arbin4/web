@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Object</title>
+  </head>
+  <body></body>
+  <p class="para" id="hello1">Hello1</p>
+  <p class="para">Hello2</p>
+  <script>
+    // const paragraphElement = document.querySelectorAll(".para");
+    // paragraphElement[0].textContent = "Modified Hello";
+    // paragraphElement[0].parentElement.removeChild(paragraphElement[1]);
+    let button = document.createElement("button");
+    button.textContent = "Submit";
+    button.className = "btn";
+    button.addEventListener("click", () => {
+      console.log("Button CLicked");
+    });
+
+    document.body.appendChild(button);
+  </script>
+</html>

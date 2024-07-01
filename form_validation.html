@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form action="" name="loginForm" onsubmit="return validateForm();">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" />
+      <br /><br />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+      <br /><br />
+
+      <label>Gender: </label>
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">Male</label>
+
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female">Female</label>
+      <br /><br />
+
+      <label>Hobbies: </label>
+      <input
+        type="checkbox"
+        name="hobbies"
+        id="table-tennis"
+        value="table-tennis"
+      />
+      <label for="table-tennis">Table Tennis</label>
+
+      <input type="checkbox" name="hobbies" id="reading" value="reading" />
+      <label for="reading">Reading</label>
+
+      <input
+        type="checkbox"
+        name="hobbies"
+        id="travelling"
+        value="travelling"
+      />
+      <label for="travelling">Travelling</label>
+      <br /><br />
+
+      <input type="submit" value="Submit" />
+      <br /><br />
+    </form>
+    <script>
+      function validateForm() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+        const hobbies = document.getElementsByName("hobbies");
+
+        if (!username) {
+          alert("Username is required");
+          return false;
+        } else if (username.length < 5) {
+          alert("Username should be at least 5 characters long");
+          return false;
+        } else if (!password) {
+          alert("Password is required");
+          return false;
+        } else if (!/^\d.*\$/.test(password)) {
+          alert(
+            "Password should start with a digit and end with a dollar sign"
+          );
+          return false;
+        } else if (!gender) {
+          alert("Please select a gender");
+          return false;
+        }
+
+        let isHobbySelected = false;
+        for (let i = 0; i < hobbies.length; i++) {
+          if (hobbies[i].checked) {
+            isHobbySelected = true;
+            break;
+          }
+        }
+
+        if (!isHobbySelected) {
+          alert("Please select at least one hobby");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
